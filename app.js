@@ -1,5 +1,5 @@
 var express = require('express'),
-		async = require('async'),
+	async = require('async'),
     routes = require('./routes'),
     User = require('./dbhandlers').UserProvider,
     Match = require('./dbhandlers').MatchProvider;
@@ -242,5 +242,6 @@ app.post('/m', function (req, res) {
     }) */
 });
 
-app.listen(process.env.PORT || 3000);
-console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+var port = process.env.PORT || 3000;
+app.listen(port);
+console.log("App listening on port %d", port);
